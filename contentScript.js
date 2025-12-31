@@ -102,7 +102,7 @@ const newVideoLoaded = async () => {
     }
 };
 
-// Add bookmark at current time
+// Add bookmark at current time and sync to Notion
 const addNewBookmarkEventHandler = async () => {
     const currentTime = youtubePlayer.currentTime;
     const newBookmark = {
@@ -115,6 +115,19 @@ const addNewBookmarkEventHandler = async () => {
     }, () => {
         currentVideoBookmarks.push(newBookmark);
         renderBookmarkDots(currentVideoBookmarks, youtubePlayer.duration);
+        
+        // --- NEW: Trigger Notion Sync ---
+        chrome.runtime.sendMessage({
+            type: "SYNC_TO_NOTION",
+            bookmark: newBookmark,
+            videoUrl: window.location.href.split('&')[0] // Base video URL
+        }, (response) => {
+            if (response && !response.success) {
+                console.error("Notion Sync Failed:", response.error);
+            } else {
+                console.log("Notion Sync Successful!");
+            }
+        });
     });
 };
 
