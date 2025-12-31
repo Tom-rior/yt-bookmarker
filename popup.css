@@ -1,0 +1,185 @@
+html {
+  cursor: pointer;
+  overflow-y:scroll;
+}
+
+body {
+  background-color: #171717;
+  font-family: sans-serif;
+  cursor: default;
+  margin: 0;
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+
+/* CUSTOM SCROLL BAR */
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ededed; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #da0037;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ae002c; 
+  
+}
+
+.container {
+    width: 300px;
+    color: #fff;
+}
+
+#header {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mode-toggle {
+  background-color: #da0037;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s ease-in;
+}
+
+/* .mode-toggle:hover {
+  cursor: pointer;
+  outline: 2px solid #da0037;
+  background-color: transparent;
+  color: #da0037;
+} */
+
+.mode-toggle:hover {
+  cursor: pointer;
+  background-color: #b4002d;
+  color: rgb(208, 208, 208);
+}
+
+.mode-toggle:active {
+  background-color: #7c0422;
+}
+
+.light-mode-toggle{
+  cursor: pointer;
+}
+
+.light-mode-toggle {
+  background-image: url(assets/darkModeIcon.png);
+}
+
+#appLogo {
+  padding: 1em 1em 1em 0.5em;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 8px 0 8px;
+}
+
+.textbox {
+  width: 100%;
+  font-size: 12px;
+  margin: 0;
+  padding: 0px 2px;
+}
+
+.textbox:focus {
+  outline: 0;
+  border-color: #66afe9;
+}
+
+.bookmarks {
+  margin: 5px 5px;
+  padding: 3px;
+}
+
+.bookmark {
+  display: flex;
+  align-items: center;
+  background-color: #da0037ff;
+  border-radius: 50px;
+  box-sizing: border-box;
+  padding: 15px;
+  margin: 10px 0;
+  transition: transform 0.2s ease-in-out;
+
+}
+
+.bookmark:hover {
+  cursor: pointer;
+  transform: translateX(0.5em);
+  
+}
+
+.bookmark-title {
+  padding-left: 2px;
+}
+
+#bookmarkControls {
+  background-color: #fff;
+  color: #DA0037;
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  font-size: 14px;
+  padding: 0.5em;
+  margin: 0.25em;
+  transition: all 0.2s cubic-bezier(0.1, -0.6, 0.2, 0);
+}
+
+#bookmarkControls:hover {
+  outline: 1.65px solid white;
+  background-color: transparent;
+  color: white;
+}
+
+.bookmark-controls img:nth-child(1):hover {
+  content: url("assets/playHover.png");
+}
+
+.bookmark-controls img:nth-child(2):hover {
+  content: url("assets/deleteHover.png");
+}
+
+.bookmark-controls {
+  flex: auto;
+  text-align: right;
+}
+
+/* Light Mode */
+.light-mode-body {
+  background-color: #fff;
+}
+
+.light-mode-logo {
+  content: url("assets/logoDarkMode.png");
+}
+
+.light-mode-title {
+  color: #DA0037;
+}
+
+
+.light-mode-noBookmarks {
+  color: #da0037;
+}
+
+.light-mode-body::-webkit-scrollbar-track {
+  background: #dfdfdf; 
+}
